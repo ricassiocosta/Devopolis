@@ -3,6 +3,10 @@ const Dev = require('../models/Dev')
 
 module.exports = {
   async index (req, res) {
+    if (!res.locals.user) {
+      return res.json({ error: 'login expired' })
+    }
+
     const { id: devId } = res.locals.user
 
     const dev = await Dev.findOne({ _id: devId })
