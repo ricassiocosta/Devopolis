@@ -37,6 +37,16 @@ export default class CreatePost1614891219698 implements MigrationInterface {
             type: 'integer',
             default: 0,
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       })
     );
