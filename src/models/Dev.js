@@ -11,6 +11,10 @@ const DevSchema = new mongoose.Schema({
   followedList: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Dev'
+  }],
+  likedPosts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post'
   }]
 })
 
