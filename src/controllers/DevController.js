@@ -94,5 +94,16 @@ module.exports = {
     } catch (error) {
       console.log(error)
     }
+  },
+  async getRepositories (req, res) {
+    try {
+      const { username } = req.params
+      const response = await axios.get(`https://api.github.com/users/${username}/repos`)
+      const repos = response.data
+
+      return res.json(repos)
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
